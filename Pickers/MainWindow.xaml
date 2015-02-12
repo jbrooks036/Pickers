@@ -20,6 +20,7 @@
         </StackPanel>
 
         <DataGrid HorizontalAlignment="Left" Height="245" Margin="31,432,0,0" VerticalAlignment="Top" Width="630"/>
+        <Button x:Name="AddButton" Content="Add" HorizontalAlignment="Left" Margin="475,127,0,0" VerticalAlignment="Top" Width="102" RenderTransformOrigin="0.493,-5.55" Height="42"/>
 
     </Grid>
 </Window>

@@ -38,7 +38,14 @@
     <Reference Include="Castle.Core">
       <HintPath>..\packages\Castle.Core.3.3.0\lib\net45\Castle.Core.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="TestStack.BDDfy">
       <HintPath>..\packages\TestStack.BDDfy.4.1.0\lib\NET40\TestStack.BDDfy.dll</HintPath>
     </Reference>
@@ -59,10 +66,14 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="TestHelper.cs" />
     <Compile Include="PickersUITests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TuneModelTest.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

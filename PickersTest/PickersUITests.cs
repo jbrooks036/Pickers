@@ -34,14 +34,23 @@ namespace PickersTest
             // TextBox search_notes_text_box = window.Get<TextBox>("SearchNotesTextBox");
 
             Assert.IsFalse(search_artist_text_box.IsReadOnly);
-            Assert.AreEqual(search_artist_text_box.Text, "Search Artist");
+            Assert.AreEqual(search_artist_text_box.Text, "SearchOnArtist");
             Assert.IsFalse(search_tune_text_box.IsReadOnly);
-            Assert.AreEqual(search_tune_text_box.Text, "Search Tune");
+            Assert.AreEqual(search_tune_text_box.Text, "SearchOnTune");
             Assert.IsFalse(search_button.Enabled);
             // Assert.AreEqual(search_notes_text_box.Text, "Search Notes");
             // Assert.IsFalse(search_notes_text_box.IsReadOnly);
             System.Threading.Thread.Sleep(1000);
         }
+
+        [TestMethod]
+        public void TestZeroStateAddButton()
+        {
+            Button button = window.Get<Button>("AddButton");
+            Assert.AreEqual("Add", button.Text);
+            System.Threading.Thread.Sleep(1000);
+        }
+
 
         [ClassCleanup]
         public static void TearDown()
