@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using Pickers;
+//using Pickers.Model;
 
 namespace Pickers.Repository
 {
@@ -30,12 +31,14 @@ namespace Pickers.Repository
 
         public int GetCount()
         {
-            throw new NotImplementedException();
+            return _dbContext.Tunes.Count<Model.Tune>();
         }
 
         public void Add(Model.Tune T)
         {
-            throw new NotImplementedException();
+            // TBD: error checking for adding duplicate tune, or migration on table
+            _dbContext.Tunes.Add(T);
+            _dbContext.SaveChanges();
         }
 
         public void Delete(Model.Tune T)
