@@ -48,12 +48,15 @@ namespace Pickers.Repository
 
         public void Clear()
         {
-            throw new NotImplementedException();
+            var a = this.All();
+            _dbContext.Tunes.RemoveRange(a);
+            _dbContext.SaveChanges();
         }
 
         public IEnumerable<Model.Tune> All()
         {
-            throw new NotImplementedException();
+            var qu = from Tune in _dbContext.Tunes select Tune;
+            return qu.ToList<Model.Tune>();
         }
 
         public Model.Tune GetById(int id)

@@ -19,7 +19,7 @@ namespace PickersTest
         [TestMethod]
         public void CreatingATuneStoresItsProperties()
         {
-            Tune LittleMaggie = new Tune("LittleMaggie");
+            Tune LittleMaggie = new Tune("Little Maggie");
             Assert.AreEqual("Little Maggie", LittleMaggie.Name);
         }
 
