@@ -28,8 +28,8 @@ namespace PickersTest
         [TestMethod]
         public void TestZeroState()
         {
-            TextBox search_artist_text_box = window.Get<TextBox>("SearchArtistTextBox");
-            TextBox search_tune_text_box = window.Get<TextBox>("SearchTuneTextBox");
+            TextBox search_artist_text_box = window.Get<TextBox>("SearchArtistBox");
+            TextBox search_tune_text_box = window.Get<TextBox>("SearchTuneBox");
             Button search_button = window.Get<Button>("SearchButton");
             // TextBox search_notes_text_box = window.Get<TextBox>("SearchNotesTextBox");
 

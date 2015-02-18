@@ -30,17 +30,17 @@ namespace Pickers
 
         private void SearchArtistTextBox_Click(object sender, RoutedEventArgs e)
         {
-            SearchArtistTextBox.IsEnabled = true;
-            SearchTuneTextBox.IsEnabled = false;
-            SearchTuneTextBox.Text = "";
+            SearchArtistBox.IsEnabled = true;
+            SearchTuneBox.IsEnabled = false;
+            SearchTuneBox.Text = "";
             SearchButton.IsEnabled = true;
         }
 
         private void SearchTuneTextBox_Click(object sender, RoutedEventArgs e)
         {
-            SearchTuneTextBox.IsEnabled = true;
-            SearchArtistTextBox.IsEnabled = false;
-            SearchArtistTextBox.Text = "";
+            SearchTuneBox.IsEnabled = true;
+            SearchArtistBox.IsEnabled = false;
+            SearchArtistBox.Text = "";
             SearchButton.IsEnabled = true;
         }
 
