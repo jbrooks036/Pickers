@@ -6,7 +6,7 @@ using Pickers;
 using Pickers.Model;
 using Pickers.Repository;
 
-namespace PickersTest
+namespace TestPickers
 {
     /// <summary>
     /// Summary description for TuneRepositoryTest

@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Pickers.Model;
 
-namespace PickersTest
+namespace TestPickers
 {
     [TestClass]
     public class TuneModelTest

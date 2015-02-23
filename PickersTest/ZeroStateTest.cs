@@ -6,27 +6,34 @@ using TestStack.White;
 using TestStack.White.Factory;
 using TestStack.White.UIItems;
 using TestStack.White.UIItems.WindowItems;
+using TestStack.White.UIItems.ListBoxItems;
+using TestStack.White.UIItems.Finders;
 
-namespace PickersTest
+namespace TestPickers
 { 
     [TestClass]
-    public class PickersUITests
+    public class ZeroStateTest : TestHelper
     {
-        private static TestContext test_context;
-        private static Window window;
-        private static Application application;
-
         [ClassInitialize]
-        public static void Setup(TestContext _context)
+        public static void SetupTests(TestContext _context)
         {
-            test_context = _context;
-            var applicationDir = _context.DeploymentDirectory;
-            var applicationPath = Path.Combine(applicationDir, "..\\..\\..\\PickersTest\\bin\\Debug\\Pickers");
-            application = Application.Launch(applicationPath);
-            window = application.GetWindow("MainWindow", InitializeOption.NoCache);
+            TestHelper.SetupClass(_context);
         }
+
+        [TestInitialize]
+        public static void SetupTests()
+        {
+            TestHelper.TestPrep();
+        }
+
+        [TestCleanup]
+        public void CleanUp()
+        {
+            TestHelper.CleanThisUp();
+        }
+
         [TestMethod]
-        public void TestZeroState()
+        public void TestZeroStateSearch()
         {
             TextBox search_artist_text_box = window.Get<TextBox>("SearchArtistBox");
             TextBox search_tune_text_box = window.Get<TextBox>("SearchTuneBox");
@@ -40,7 +47,7 @@ namespace PickersTest
             Assert.IsFalse(search_button.Enabled);
             // Assert.AreEqual(search_notes_text_box.Text, "Search Notes");
             // Assert.IsFalse(search_notes_text_box.IsReadOnly);
-            System.Threading.Thread.Sleep(1000);
+            System.Threading.Thread.Sleep(500);
         }
 
         [TestMethod]
@@ -48,7 +55,7 @@ namespace PickersTest
         {
             Button button = window.Get<Button>("AddButton");
             Assert.AreEqual("Add", button.Text);
-            System.Threading.Thread.Sleep(1000);
+            System.Threading.Thread.Sleep(500);
         }
 
 

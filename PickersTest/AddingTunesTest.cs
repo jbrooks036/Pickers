@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Pickers.Model;
 
-namespace PickersTest
+namespace TestPickers
 {
     [TestClass]
     public class AddingTunesTest : TestHelper
@@ -40,7 +40,7 @@ namespace PickersTest
         {
             WhenIFillInTuneNameWith("Little Maggie");
             AndIClick("Add");
-            ThenIShouldSeeNTunes(1);
+            ThenIShouldSeeNumberTunes(1);
         }
     }
 }

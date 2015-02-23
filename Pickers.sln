@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pickers", "Pickers\Pickers.csproj", "{08E3A58E-8305-4A9C-BF2A-A6EAFA796787}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PickersTest", "PickersTest\PickersTest.csproj", "{29DF7883-2685-40D9-BA3A-4D864EDA723E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPickers", "PickersTest\TestPickers.csproj", "{29DF7883-2685-40D9-BA3A-4D864EDA723E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

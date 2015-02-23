@@ -17,13 +17,13 @@ using Pickers.Model;
 using Pickers.Repository;
 // using System.Windows.Automation;
 
-namespace PickersTest
+namespace TestPickers
 {
     public class TestHelper
     {
         private static TestContext test_context;
         protected static Window window;
-        private static Application application;
+        protected static Application application;
         private static TuneRepository repo = new TuneRepository();
         private static TuneContext context;
         private static String applicationPath;
@@ -31,7 +31,7 @@ namespace PickersTest
         public static void SetupClass(TestContext _context)
         {
             var applicationDir = _context.DeploymentDirectory;
-            var applicationPath = Path.Combine(applicationDir, "..\\..\\..\\TestPickers\\bin\\Debug\\Pickers");
+            applicationPath = Path.Combine(applicationDir, "..\\..\\..\\PickersTest\\bin\\Debug\\Pickers");
         }
 
         public static void TestPrep()
@@ -41,11 +41,9 @@ namespace PickersTest
             context = repo.Context();
         }
 
-        public static void CleanThisUp()
+        public void AndIShouldSeeAnErrorMiessage(string p)
         {
-            window.Close();
-            application.Close();
-            repo.Clear();
+            throw new NotImplementedException();
         }
 
         public void WhenIFillInTuneNameWith(string value)
@@ -54,12 +52,30 @@ namespace PickersTest
             textBox.SetValue(value);
         }
 
+        public void AndIClick(string buttonContent)
+        {
+            WhenIClick(buttonContent);
+        }
+
+        public void WhenIClick(string buttonContent)
+        {
+            Button button = window.Get<Button>(SearchCriteria.ByText(buttonContent));
+            button.Click();
+        }
+
         public void ThenIShouldSeeNumberTunes(int num)
         {
             Assert.IsNotNull(window);
             SearchCriteria searchCriteria = SearchCriteria.ByAutomationId("TunesGrid").AndIndex(0);
-            DataGrid data_grid = window.Get<DataGrid>(searchCriteria);
+            ListBox tunes_grid = window.Get<ListBox>(searchCriteria);
             Assert.AreEqual(num, tunes_grid.Items.Count);
+        }
+
+        public static void CleanThisUp()
+        {
+            window.Close();
+            application.Close();
+            repo.Clear();
         }
 
     }
