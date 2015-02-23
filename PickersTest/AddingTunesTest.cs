@@ -41,6 +41,8 @@ namespace TestPickers
             WhenIFillInTuneNameWith("Little Maggie");
             AndIClick("Add");
             ThenIShouldSeeNumberTunes(1);
+            AndThatTunesNameShouldBe("Little Maggie");
         }
+
     }
 }

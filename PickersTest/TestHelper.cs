@@ -41,7 +41,7 @@ namespace TestPickers
             context = repo.Context();
         }
 
-        public void AndIShouldSeeAnErrorMiessage(string p)
+        public void AndIShouldSeeAnErrorMessage(string p)
         {
             throw new NotImplementedException();
         }
@@ -67,8 +67,13 @@ namespace TestPickers
         {
             Assert.IsNotNull(window);
             SearchCriteria searchCriteria = SearchCriteria.ByAutomationId("TunesGrid").AndIndex(0);
-            ListBox tunes_grid = window.Get<ListBox>(searchCriteria);
+            ListView tunes_grid = window.Get<ListView>(searchCriteria);
             Assert.AreEqual(num, tunes_grid.Items.Count);
+        }
+
+        public void AndThatTunesNameShouldBe(string TuneName)
+        {
+            throw new NotImplementedException();
         }
 
         public static void CleanThisUp()

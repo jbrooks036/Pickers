@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Pickers;
+using Pickers.Model;
+using Pickers.Repository;
 
 namespace Pickers
 {
@@ -22,9 +26,13 @@ namespace Pickers
     {
         private static Boolean SearchEnabled;
 
+        //public ObservableCollection<Tune> Tunes;
+        //public static TuneContext _dbContext;
+        public static TuneRepository repo = new TuneRepository();
         public MainWindow()
         {
             InitializeComponent();
+            TunesGrid.DataContext = repo.Context().Tunes.Local;
             SearchEnabled = false;
         }
 
@@ -47,6 +55,11 @@ namespace Pickers
         private void SearchTuneTextBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
 
+        }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            repo.Add(new Tune(TuneNameBox.Text)); 
         }
 
     }
