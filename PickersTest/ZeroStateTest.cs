@@ -21,7 +21,7 @@ namespace TestPickers
         }
 
         [TestInitialize]
-        public static void SetupTests()
+        public void SetupTests()
         {
             TestHelper.TestPrep();
         }
