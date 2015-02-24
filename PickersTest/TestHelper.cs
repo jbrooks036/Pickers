@@ -73,7 +73,10 @@ namespace TestPickers
 
         public void AndThatTunesNameShouldBe(string TuneName)
         {
-            throw new NotImplementedException();
+            Assert.IsNotNull(window);
+            SearchCriteria searchCriteria = SearchCriteria.ByAutomationId("TunesGrid");
+            ListView tunes_grid = window.Get<ListView>(searchCriteria);
+            Assert.AreEqual("Little Maggie", tunes_grid.Items[0]);
         }
 
         public static void CleanThisUp()
