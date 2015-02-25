@@ -8,7 +8,7 @@
 
         <StackPanel HorizontalAlignment="Left" Height="251" Margin="31,88,0,0" VerticalAlignment="Top" Width="294">
             <TextBox x:Name="ArtistNameBox" Height="23" TextWrapping="Wrap" Text="Artist" FontSize="14" FontWeight="Bold" IsEnabled="False" />
-            <TextBox x:Name="TuneNameBox" Height="23" TextWrapping="Wrap" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}" FontSize="14" FontWeight="Bold"/>
+            <TextBox x:Name="TuneNameBox" Height="23" TextWrapping="Wrap" Text="Tune Name" FontSize="14" FontWeight="Bold"/>
             <TextBox x:Name="AlbumTitleBox" Height="23" TextWrapping="Wrap" Text="Album Title" FontSize="14" FontWeight="Bold" IsEnabled="False"/>
         </StackPanel>
         <Button x:Name="AddButton" Content="Add" HorizontalAlignment="Left" Margin="475,127,0,0" VerticalAlignment="Top" Width="102" RenderTransformOrigin="0.493,-5.55" Height="42" Click="AddButton_Click"/>
@@ -19,7 +19,7 @@
             <Button x:Name="SearchButton" Width="150" Content="Search" Margin="10,10,10,10" Height="35" FontSize="16" FontWeight="Bold" IsEnabled="False"/>
         </StackPanel>
 
-        <DataGrid x:Name="TunesGrid" HorizontalAlignment="Left" Height="245" Margin="31,432,0,0" VerticalAlignment="Top" Width="630" ItemsSource="{Binding NotifyOnSourceUpdated=True}"/>
+        <DataGrid x:Name="TunesGrid" HorizontalAlignment="Left" Height="245" Margin="31,432,0,0" VerticalAlignment="Top" Width="630" ItemsSource="{Binding NotifyOnSourceUpdated=True}" CanUserAddRows="false" SelectionMode="Single" SelectionUnit="FullRow"/>
 
     </Grid>
 </Window>
