@@ -67,6 +67,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="AddingTunesTest.cs" />
+    <Compile Include="DataGridRow.cs" />
     <Compile Include="TestHelper.cs" />
     <Compile Include="ZeroStateTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

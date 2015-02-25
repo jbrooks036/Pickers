@@ -11,16 +11,17 @@ using TestStack.White.Factory;
 using TestStack.White.UIItems;
 using TestStack.White.UIItems.Finders;
 using TestStack.White.UIItems.ListBoxItems;
-using TestStack.White.UIItems.ListView;
+// using TestStack.White.UIItems.ListView;
 using TestStack.White.UIItems.WindowItems;
 using Pickers;
 using Pickers.Model;
 using Pickers.Repository;
+using PickersTest;
 // using System.Windows.Automation;
 
 namespace TestPickers
 {
-    public class TestHelper
+    public class TestHelper // : ListView
     {
         private static TestContext test_context;
         protected static Window window;
@@ -78,8 +79,8 @@ namespace TestPickers
             Assert.IsNotNull(window);
             SearchCriteria searchCriteria = SearchCriteria.ByAutomationId("TunesGrid");
             ListView tunes_grid = window.Get<ListView>(searchCriteria);
-            String name = tunes_grid.item[0] as Tune;
-            Assert.AreEqual("Little Maggie", name);
+            var name = tunes_grid.Cell("Name", 0).Name;
+            Assert.AreEqual(TuneName, name);
         }
 
         public static void CleanThisUp()
