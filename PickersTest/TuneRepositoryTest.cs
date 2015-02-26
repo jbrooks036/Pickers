@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Pickers;
 using Pickers.Model;
@@ -50,6 +51,16 @@ namespace TestPickers
             repo.Add(new Tune("Little Maggie"));
             repo.Add(new Tune("Foggy Mountain Breakdown"));
             Assert.AreEqual(2, repo.GetCount());
+        }
+
+        [TestMethod]
+        public void TestGetByTuneName()
+        {
+            repo.Add(new Tune("Little Maggie"));
+            repo.Add(new Tune("Foggy Mountain Breakdown"));
+            repo.Add(new Tune("Boil dem Cabbage Down"));
+            var t = repo.GetByTuneName("Little Maggie")[0];
+            Assert.AreEqual(t.Name, "Little Maggie");
         }
 
         [TestMethod]

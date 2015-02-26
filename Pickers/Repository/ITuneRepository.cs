@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -16,6 +17,7 @@ namespace Pickers.Repository
         void Clear();
         IEnumerable<Tune> All();
         Tune GetById(int id);
+        ObservableCollection<Model.Tune> GetByTuneName(string name); 
         IQueryable<Tune> SearchFor(Expression<Func<Tune, bool>> predicate);
     }
 }

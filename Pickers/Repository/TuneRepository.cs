@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using Pickers;
-//using Pickers.Model;
+using Pickers.Model;
 
 namespace Pickers.Repository
 {
@@ -67,6 +68,15 @@ namespace Pickers.Repository
         public Model.Tune GetById(int id)
         {
             throw new NotImplementedException();
+        }
+
+        public ObservableCollection<Model.Tune> GetByTuneName(string name)
+        {
+            var query = from Tune in _dbContext.Tunes
+                        where name == Tune.Name
+                        select Tune;
+            var tunes = new ObservableCollection<Tune>(query.ToList<Tune>());
+            return tunes;
         }
 
         public IQueryable<Model.Tune> SearchFor(System.Linq.Expressions.Expression<Func<Model.Tune, bool>> predicate)
