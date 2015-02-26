@@ -52,9 +52,11 @@ namespace Pickers
             SearchButton.IsEnabled = true;
         }
 
-        private void SearchTuneTextBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
-
+            repo.Add(new Tune(ArtistNameInputBox.Text, 
+                              TuneNameInputBox.Text, 
+                              AlbumTitleInputBox.Text)); 
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
