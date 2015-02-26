@@ -51,7 +51,7 @@ namespace TestPickers
 
         public void WhenIFillInTuneNameWith(string value)
         {
-            var textBox = window.Get<TextBox>("TuneNameBox");
+            var textBox = window.Get<TextBox>("TuneNameInputBox");
             textBox.SetValue(value);
         }
 

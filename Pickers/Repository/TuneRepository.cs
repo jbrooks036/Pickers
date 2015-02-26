@@ -17,6 +17,11 @@ namespace Pickers.Repository
         {
             _dbContext = new TuneContext();
             _dbContext.Tunes.Load();
+
+            // see the database
+            _dbContext.Tunes.Add(new Model.Tune("Little Maggie"));
+            _dbContext.Tunes.Add(new Model.Tune("Foggy Mountain Breakdown"));
+            _dbContext.SaveChanges();
         }
 
         public TuneContext Context()

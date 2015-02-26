@@ -59,7 +59,9 @@ namespace Pickers
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            repo.Add(new Tune(TuneNameBox.Text)); 
+            repo.Add(new Tune(ArtistNameInputBox.Text, 
+                              TuneNameInputBox.Text, 
+                              AlbumTitleInputBox.Text)); 
         }
 
     }
